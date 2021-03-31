@@ -1,3 +1,3 @@
-# Professional README Generator - test
+# Professional README Generator
 
 [How to create a Professional README](./readme-guide.md)
