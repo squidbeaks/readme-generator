@@ -3,18 +3,27 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = ["What are the installation steps to install your project?",
+"Provide instructions and examples for use. Include screenshots as needed.",
+"List your collaborators, if any, with links to their GitHub profiles.",
+"What license is associated with your project?", "What are the features of your project?",
+"What technologies did you use in your project?",
+"How can other contribute to your project?"];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
-
+    console.log('sup?');
 // TODO: Create a function to initialize app
 function init() {}
 
 // Function call to initialize app
 init();
 
+writeToFile();
 
+const data = console.log('test');
+
+generateMarkdown(data);
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for information about my application repository
 // THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
