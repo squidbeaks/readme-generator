@@ -1,4 +1,4 @@
-# asdf undefined
+# asdf 
 
   ## Description
   asdf
@@ -16,18 +16,16 @@
   asdf
 
   ## Usage
-  asdaf
+  adsf
   
-  ## License
-  Read more about the CC0 license [here](<https://opensource.org/licenses/CC0>).
   
   
   ## Contributing
   asdf
 
   ## Tests
-  asdf
+  adsf
 
   ## Questions?
-  Reach me at [Github](https://github.com/dsasdf) or [email](asdf)!
+  Reach me at [Github](https://github.com/asdf) or [email](asdf)!
   
