@@ -1,7 +1,7 @@
-# sdf [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# README Generator [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
   ## Description
-  sdf
+  This application is meant to help developers quickly generate README.md files for their development applications.
 
   ## Table of Contents
 
@@ -13,21 +13,21 @@
   * [Questions](#questions)
 
   ## Installation
-  sdf
+  To install this application, you can go to my github read-me-generator repo and clone the app.
 
   ## Usage
-  sdf
+  To use this application, cd into the cloned repo and run node index.js.
   
   ## License
-  Read more about the Apache 2.0 [here](<https://opensource.org/licenses/Apache 2.0>).
+  Read more about the Apache 2.0 license [here](<https://opensource.org/licenses/Apache 2.0>).
   
   
   ## Contributing
-  sdf
+  You can contribute at https://github.com/squidbeaks/readme-generator
 
   ## Tests
-  sdf
+  This repo doesn't have tests unfortunately.
 
   ## Questions?
-  Reach me at [Github](https://github.com/sdf) or [email](sdf)!
+  Reach me at [Github](https://github.com/squidbeaks) or [email](leahsigridrussell@gmail.com)!
   
