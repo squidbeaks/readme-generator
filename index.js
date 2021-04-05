@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMD = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
     'What is your github username?',
     'What is your email?',
@@ -16,78 +16,28 @@ const questions = [
     'Provide instructions on how to run tests for your application.',
 ];
 
+// Array of licenses
 const licenses = [
-    {
-        name: 'Apache 2.0',
-        badgeUrl: 'https://img.shields.io/badge/License-Apache%202.0-blue.svg'
-    },
-    {
-        name: 'Boost 1.0',
-        badgeUrl: 'https://img.shields.io/badge/License-Boost%201.0-lightblue.svg'
-    },
-    {
-        name: 'BSD 3-Clause',
-        badgeUrl: 'https://img.shields.io/badge/License-BSD%203--Clause-blue.svg'
-    }
-    // {
-    //     name: 'CC0',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'EPL 1.0',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'GPLv3',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'IPL 1.0',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'ISC',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'MIT',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'MPL 2.0',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'ODC',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'Perl',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'Artistic 2.0',
-    //     badgeUrl: 
-    // },    
-    // {
-    //     name: 'OFL 1.1',
-    //     badgeUrl: 
-    // },    
-    // {
-    //     name: 'Unlicense',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'WTFPL',
-    //     badgeUrl: 
-    // },
-    // {
-    //     name: 'Zlib',
-    //     badgeUrl: 
-    // }
+    'Apache 2.0',
+    'Boost 1.0',
+    'BSD 3-Clause',
+    'CC0',
+    'EPL 1.0',
+    'GPLv3',
+    'IPL 1.0',
+    'ISC',
+    'MIT',
+    'MPL 2.0',
+    'ODC',
+    'Perl',
+    'Artistic 2.0',
+    'OFL 1.1',
+    'Unlicense',
+    'WTFPL',
+    'Zlib',
 ];
 
-// TODO: Prompt user with questions
+// Prompt user with questions
 const promptUser = readMeData => {
     if (!readMeData) {
         readMeData = [];
@@ -221,7 +171,3 @@ promptUser()
      console.log('README complete! Check out the README.md to see the output!');
     });
 });
-
-// GIVEN a command-line application that accepts user input
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
