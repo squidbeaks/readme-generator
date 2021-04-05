@@ -18,6 +18,8 @@
   ## Usage
   To use this application, cd into the cloned repo on your local machine and run node index.js. You will be prompted with a list of questions, and your responses will be saved and generated into a README.md file. You can copy the output of this file and contribute it directly to your project's README.
   
+  [Here](https://drive.google.com/file/d/16POVOsA-SRihC93jh44EyaOpGsCjNPVD/view?usp=sharing) is a video demostrating the application in action.
+  
   ## License
   Read more about the Apache 2.0 license [here](<https://opensource.org/licenses/Apache 2.0>).
   
