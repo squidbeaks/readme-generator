@@ -1,27 +1,39 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+
+function renderLicenseBadge(license) {
+  if (!license) {
+    return '';
+  }
+
+  return `[![License: ${license}](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`;
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (!license) {
+    return '';
+  }
+
+  return `<https://opensource.org/licenses/${license}>`
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (!license) {
+    return '';
+  }
+
+  return `## License
+  Read more about the ${license} license [here](${renderLicenseLink(license)}).
+  `;
+};
 
 // TODO: Create a function to generate markdown for README
-
-
-// function generateMD(title, github) {
 module.exports = templateData => {
-  console.log(templateData);
-  console.log(templateData[0].title);
-  console.log(templateData[0].description);
-  console.log(templateData[0].github);
-
-
-  return `# ${templateData[0].title}
+  return `# ${templateData[0].title} [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
   ## Description
   ${templateData[0].description}
@@ -30,10 +42,9 @@ module.exports = templateData => {
 
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Credits](#credits)
   * [License](#license)
   * [Contributing](#contributing)
-  * [Test](#tests)
+  * [Tests](#tests)
   * [Questions](#questions)
 
   ## Installation
@@ -41,10 +52,9 @@ module.exports = templateData => {
 
   ## Usage
   ${templateData[0].usage}
-
-  ## License
-  ${templateData[0].license}
-
+  
+  ${renderLicenseSection(templateData[0].license[0])}
+  
   ## Contributing
   ${templateData[0].contribution}
 
@@ -52,8 +62,6 @@ module.exports = templateData => {
   ${templateData[0].tests}
 
   ## Questions?
-  Reach me at Github or email!
-  Github: <https://github.com/${templateData[0].github}>
-  Email me at: <${templateData[0].email}>
+  Reach me at [Github](https://github.com/${templateData[0].github}) or [email](${templateData[0].email})!
   `;
 };

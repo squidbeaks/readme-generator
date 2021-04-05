@@ -2,21 +2,89 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMD = require('./utils/generateMarkdown.js');
-//const mdContent = generateMD(title, github);
 
 // TODO: Create an array of questions for user input
 const questions = [
     'What is your github username?',
+    'What is your email?',
+    'What is the title of your application?',
     'Provide a description of your application.',
-    'Provide installation instructions or a link to visit your project.',
-    'Provide instruction on how to use your application. Include screenshots as needed.',
+    'Provide installation instructions for your application.',
+    'Provide instruction on how to use your application.',
     'Choose what license is associated with your project.',
-    'Provide instruction on how indviiduals can contribute to your project.',
-    'Provide instructions on how to run tests for your project.',
-    'What is your email if users of your application have questions?',
-    'Were there other individuals that helped contribute to your project?',
-    'List the names of other contributors to this project.',
-    'What is the title of your project?'
+    'Provide instruction on how individuals can contribute to your application.',
+    'Provide instructions on how to run tests for your application.',
+];
+
+const licenses = [
+    {
+        name: 'Apache 2.0',
+        badgeUrl: 'https://img.shields.io/badge/License-Apache%202.0-blue.svg'
+    },
+    {
+        name: 'Boost 1.0',
+        badgeUrl: 'https://img.shields.io/badge/License-Boost%201.0-lightblue.svg'
+    },
+    {
+        name: 'BSD 3-Clause',
+        badgeUrl: 'https://img.shields.io/badge/License-BSD%203--Clause-blue.svg'
+    }
+    // {
+    //     name: 'CC0',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'EPL 1.0',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'GPLv3',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'IPL 1.0',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'ISC',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'MIT',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'MPL 2.0',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'ODC',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'Perl',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'Artistic 2.0',
+    //     badgeUrl: 
+    // },    
+    // {
+    //     name: 'OFL 1.1',
+    //     badgeUrl: 
+    // },    
+    // {
+    //     name: 'Unlicense',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'WTFPL',
+    //     badgeUrl: 
+    // },
+    // {
+    //     name: 'Zlib',
+    //     badgeUrl: 
+    // }
 ];
 
 // TODO: Prompt user with questions
@@ -26,19 +94,6 @@ const promptUser = readMeData => {
     }
 
     return inquirer.prompt([
-        {
-            type: 'input',
-            name: 'title',
-            message: questions[10],
-            validate: titleInput => {
-                if (titleInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your project title!');
-                    return false;
-                }
-            }
-        },
         {
             type: 'input',
             name: 'github',
@@ -54,8 +109,34 @@ const promptUser = readMeData => {
         },
         {
             type: 'input',
-            name: 'description',
+            name: 'email',
             message: questions[1],
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'title',
+            message: questions[2],
+            validate: titleInput => {
+                if (titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your project title!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: questions[3],
             validate: descriptionInput => {
                 if (descriptionInput) {
                     return true;
@@ -68,7 +149,7 @@ const promptUser = readMeData => {
         {
             type: 'input',
             name: 'install',
-            message: questions[2],
+            message: questions[4],
             validate: installationInput => {
                 if (installationInput) {
                     return true;
@@ -81,7 +162,7 @@ const promptUser = readMeData => {
         {
             type: 'input',
             name: 'usage',
-            message: questions[3],
+            message: questions[5],
             validate: usageInput => {
                 if (usageInput) {
                     return true;
@@ -94,13 +175,13 @@ const promptUser = readMeData => {
         {
             type: 'checkbox',
             name: 'license',
-            message: questions[4],
-            choices: ['1', '2', '3'],
+            message: questions[6],
+            choices: licenses,
         },
         {
             type: 'input',
             name: 'contribution',
-            message: questions[5],
+            message: questions[7],
             validate: contributionInput => {
                 if (contributionInput) {
                     return true;
@@ -113,7 +194,7 @@ const promptUser = readMeData => {
         {
             type: 'input',
             name: 'tests',
-            message: questions[6],
+            message: questions[8],
             validate: testInput => {
                 if (testInput) {
                     return true;
@@ -123,19 +204,6 @@ const promptUser = readMeData => {
                 }
             }
         },
-        {
-            type: 'input',
-            name: 'email',
-            message: questions[7],
-            validate: emailInput => {
-                if (emailInput) {
-                    return true;
-                } else {
-                    console.log('Please enter your email!');
-                    return false;
-                }
-            }
-        }
     ])
     .then(answers => {
         readMeData.push(answers);
@@ -155,17 +223,5 @@ promptUser()
 });
 
 // GIVEN a command-line application that accepts user input
-// WHEN I am prompted for information about my application repository
-// THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-// WHEN I enter my project title
-// THEN this is displayed as the title of the README
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
 // WHEN I choose a license for my application from a list of options
 // THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README

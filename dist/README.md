@@ -1,7 +1,7 @@
-# Run Buddy
+# sdf [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
   ## Description
-  this is an app for runners
+  sdf
 
   ## Table of Contents
 
@@ -9,26 +9,25 @@
   * [Usage](#usage)
   * [License](#license)
   * [Contributing](#contributing)
-  * [Test](#tests)
+  * [Tests](#tests)
   * [Questions](#questions)
 
   ## Installation
-  this is how you visit my site
+  sdf
 
   ## Usage
-  this is how to use my application
-
+  sdf
+  
   ## License
-  1
-
+  Read more about the Apache 2.0 [here](<https://opensource.org/licenses/Apache 2.0>).
+  
+  
   ## Contributing
-  this is how you contribute
+  sdf
 
   ## Tests
-  test
+  sdf
 
   ## Questions?
-  Reach me at Github or email!
-  Github: <https://github.com/squidbeaks>
-  Email me at: <leahsigridrussell@gmail.com>
+  Reach me at [Github](https://github.com/sdf) or [email](sdf)!
   
